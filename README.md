@@ -59,9 +59,9 @@ Will aim to be kept as brief as possible, first part of each will include:
 
 ### Branch Naming
 
-**Convention:** snake-case
+**Convention:** snake-case & camelCase
 
-> **Example:** _<br>"add-`layout-elem`"<br>"add-`globals-styling`"_
+> **Example:** _<br>"add-`layoutElem-headerNav`"<br>"add-`globals-styling`"_
 
 ## Folder Structure:
 
