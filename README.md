@@ -1,4 +1,4 @@
-# EK MMD 4. Sem Eksamen - Argilla
+# EK MMD 4. Sem Exam - Argilla
 - Group name: 404 Not Found
 
 - Group members names:
