@@ -4,6 +4,7 @@
 // (mdSize) - Determines breakpoint sizing: mdSize = "medium" / "large"
 // (themeVariant) - Determines theme palette: themeVariant = "primary" / "secondary"
 // (btnClass) - Used for additional classes.
+// (type) - Determines button type: type = "button" / "submit" / "reset"
 */
 
 export default function ActionBtn({
@@ -12,6 +13,7 @@ export default function ActionBtn({
   mdSize,
   themeVariant = "primary",
   btnClass = "",
+  type = "button",
   children,
 }) {
   const size = {
@@ -31,21 +33,15 @@ export default function ActionBtn({
   };
 
   const btnTheme = {
-    primary:
-      "bg-secondary text-primary",
-    secondary:
-      "bg-primary text-secondary",
+    primary: "bg-secondary text-primary",
+    secondary: "bg-primary text-secondary",
   };
 
   const btnStyling = `font-bold w-fit inline-flex place-items-center md:cursor-pointer font-display ${btnTheme[themeVariant]} ${size[btnSize]} ${btnClass} ${bpSize[mdSize]} transition-all duration-150 ease-in-out hover:border-b-dark`;
   const spanText = `block overflow-hidden text-ellipsis text-nowrap w-full text-center`;
 
   return (
-    <button
-      type="button"
-      onClick={handleBtnAction}
-      className={btnStyling}
-    >
+    <button type={type} onClick={handleBtnAction} className={btnStyling}>
       <span className={`${spanText}`}>{children}</span>
     </button>
   );
