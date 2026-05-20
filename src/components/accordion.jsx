@@ -1,9 +1,12 @@
 "use client";
 
+/* Use case: 
+// (hasCheckboxes) - Used to determine whether or not to show the checkboxes at the end of the accordion.
+*/
+
 import { useState } from "react";
-import { CaretRightIcon } from "@phosphor-icons/react";
 import { CaretDownIcon } from "@phosphor-icons/react";
-import { CaretLeftIcon } from "@phosphor-icons/react";
+import Pagination from "./ui/pagination/Pagination";
 
 // ─── Placeholder data (swap with API) ──────────────────────────
 
@@ -84,35 +87,13 @@ function AccordionSlider({ slides }) {
   const hasPagination = total > 1;
 
   return (
-    <div className="bg-[#FAF8F5] px-6 pt-7 pb-5">
-      <p className="mb-5 text-base leading-relaxed text-[#240700]">
+    <div className="bg-light px-6 pt-7 pb-5">
+      <p className="text-dark mb-5 font-sans text-base leading-relaxed">
         {slides[page].content}
       </p>
 
       {hasPagination && (
-        <div className="flex items-center justify-center gap-4 pt-2">
-          <button
-            onClick={() => setPage((p) => Math.max(0, p - 1))}
-            disabled={page === 0}
-            aria-label="Forrige"
-            className="flex h-8 w-8 items-center justify-center rounded-full text-[#803125] transition-colors duration-150 hover:bg-[#803125]/10 disabled:cursor-default disabled:opacity-30"
-          >
-            <CaretLeftIcon />
-          </button>
-
-          <span className="min-w-10 text-center text-sm font-semibold tracking-wide text-[#240700]">
-            {page + 1} / {total}
-          </span>
-
-          <button
-            onClick={() => setPage((p) => Math.min(total - 1, p + 1))}
-            disabled={page === total - 1}
-            aria-label="Næste"
-            className="flex h-8 w-8 items-center justify-center rounded-full text-[#803125] transition-colors duration-150 hover:bg-[#803125]/10 disabled:cursor-default disabled:opacity-30"
-          >
-            <CaretRightIcon />
-          </button>
-        </div>
+        <Pagination page={page} total={total} setPage={setPage} />
       )}
     </div>
   );
@@ -124,18 +105,18 @@ function AccordionRow({ item }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-t border-[#f2f2f2] last:border-b-0">
+    <div className="border-light border-t last:border-b-0">
       <button
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         className={[
-          "flex w-full items-center justify-between gap-3 px-5 py-4.5 text-left text-[#FFE5Cf] transition-colors duration-200",
+          "text-secondary flex w-full items-center justify-between gap-3 px-5 py-4.5 text-left transition-colors duration-200",
           open
-            ? "border-l-8 border-[#FFE5Cf] bg-[#240700] text-[#f2f2f2]"
+            ? "border-secondary bg-dark text-light border-l-8"
             : "hover:bg-black/10",
         ].join(" ")}
       >
-        <span className="text-base leading-snug font-bold tracking-[0.01em]">
+        <span className="font-sans text-base leading-snug font-bold tracking-[0.01em]">
           {item.title}
         </span>
         <span className="shrink-0 opacity-85">
@@ -161,9 +142,9 @@ function AccordionCheckbox() {
         <input
           type="checkbox"
           id="checkbox"
-          className="size-5 cursor-pointer border-[#f2f2f2] accent-[#803125]"
+          className="border-light accent-dark size-5 cursor-pointer"
         />
-        <label htmlFor="checkbox" className="text-[#FFE5Cf]">
+        <label htmlFor="checkbox" className="text-secondary font-sans">
           - Jeg har gennemgået de relevante vilkår og politikker.
         </label>
       </div>
@@ -171,9 +152,9 @@ function AccordionCheckbox() {
         <input
           type="checkbox"
           id="checkbox"
-          className="size-5 cursor-pointer border-[#f2f2f2] accent-[#803125]"
+          className="border-light accent-dark size-5 cursor-pointer"
         />
-        <label htmlFor="checkbox" className="text-[#FFE5Cf]">
+        <label htmlFor="checkbox" className="text-secondary font-sans">
           - Jeg forstår, hvordan mine data behandles og beskyttes.
         </label>
       </div>
@@ -181,9 +162,9 @@ function AccordionCheckbox() {
         <input
           type="checkbox"
           id="checkbox"
-          className="size-5 cursor-pointer border-[#f2f2f2] accent-[#803125]"
+          className="border-light accent-dark size-5 cursor-pointer"
         />
-        <label htmlFor="checkbox" className="text-[#FFE5Cf]">
+        <label htmlFor="checkbox" className="text-secondary font-sans">
           - Jeg accepterer de rammer og retningslinjer, der gælder for brugen af
           platformen.
         </label>
@@ -199,7 +180,7 @@ export default function Accordion({
   hasCheckboxes = false,
 }) {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden bg-[#803125] px-8 py-6">
+    <div className="bg-primary mx-auto w-full max-w-4xl overflow-hidden px-8 py-6">
       {items.map((item) => (
         <AccordionRow key={item.id} item={item} />
       ))}
