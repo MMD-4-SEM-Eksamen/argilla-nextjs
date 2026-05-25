@@ -116,6 +116,12 @@ export default function ContactForm() {
       noValidate
       className="mx-auto w-full max-w-360 p-3 md:p-4"
     >
+      <h2 className="text-primary font-serif text-5xl">Lad os tage en snak</h2>
+      <p className="text-dark mt-2 mb-8 max-w-prose font-sans">
+        Har du spørgsmål til platformen, vores løsninger eller mulighederne for
+        samarbejde? Udfyld formularen nedenfor, så vender vi tilbage hurtigst
+        muligt.
+      </p>
       <div className="grid grid-cols-1 gap-x-8 gap-y-4 md:grid-cols-2">
         <div>
           <label
