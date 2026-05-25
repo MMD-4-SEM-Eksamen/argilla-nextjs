@@ -73,10 +73,11 @@ export default function Home() {
             themeVariant: "secondary",
           },
         }}
+        elemStyle="mx-mobile-inline"
       >
-        <div className="grid grid-cols-3 gap-40">
+        <div className="grid grid-cols-1 gap-20 md:grid-cols-2 lg:grid-cols-3">
           <ImageCard
-            cardTitle="Digitalisering af lagerstyring i produktionsvirksomhed"
+            cardTitle="Digitalisering af lagerstyring"
             cardText="En mellemstor produktionsvirksomhed erstattede manuelle Excel-ark med et skræddersyet lagerstyringsmodul bygget i Argilla konfigureret og vedligeholdt af deres eget team."
             imgSrc="/images/blocks.webp"
             btnChild={{
@@ -180,8 +181,9 @@ export default function Home() {
             themeVariant: "secondary",
           },
         }}
+        elemStyle="mx-mobile-inline"
       >
-        <div className="grid grid-cols-3 gap-40">
+        <div className="grid grid-cols-1 gap-20 md:grid-cols-3 md:gap-30">
           <IconCard
             themeVariant="primary"
             initSize="fit"
