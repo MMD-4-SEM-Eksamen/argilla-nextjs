@@ -183,14 +183,9 @@
     
     /* Overriding all non-breakout elements padding-inline with the mobile pad.  
       - (grid-cols-max) has been updated to include the mobile-pad-inline on both ends.
-      - "!important" is therefore a temporary workaround, until all parent element components have
-      - had their inline paddings removed, as that is now automatically applied to all descendant elems.
-    
-      - To-Do: Update all components to not have "px-" values. 
-
       */
     > *:not(.col-span-full) {
-      padding-inline: var(--mobile-pad-inline)!important;
+      padding-inline: var(--mobile-pad-inline);
     }
   }
 }
