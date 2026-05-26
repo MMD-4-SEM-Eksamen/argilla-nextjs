@@ -102,6 +102,7 @@ export default function Ydelser() {
         >
           <div className="md:px-mobile-inline grid max-w-360 grid-cols-1 gap-20 md:grid-cols-2 md:gap-30 lg:grid-cols-3">
             <IconCard
+              themeVariant="secondary"
               initSize="fit"
               iconChild={<GlobeIcon />}
               cardTitle="Lagerstyring"
@@ -117,6 +118,7 @@ export default function Ydelser() {
               }}
             />
             <IconCard
+              themeVariant="secondary"
               initSize="fit"
               iconChild={<GlobeIcon />}
               cardTitle="Ordrehåndtering"
@@ -132,6 +134,7 @@ export default function Ydelser() {
               }}
             />
             <IconCard
+              themeVariant="secondary"
               initSize="fit"
               iconChild={<GlobeIcon />}
               cardTitle="Tilbuds- og kontraktstyring"
@@ -147,6 +150,7 @@ export default function Ydelser() {
               }}
             />
             <IconCard
+              themeVariant="secondary"
               initSize="fit"
               iconChild={<GlobeIcon />}
               cardTitle="HR & medarbejderstyring"
@@ -162,6 +166,7 @@ export default function Ydelser() {
               }}
             />
             <IconCard
+              themeVariant="secondary"
               initSize="fit"
               iconChild={<GlobeIcon />}
               cardTitle="Servicedesk & opgavestyring"
@@ -177,6 +182,7 @@ export default function Ydelser() {
               }}
             />
             <IconCard
+              themeVariant="secondary"
               initSize="fit"
               iconChild={<GlobeIcon />}
               cardTitle="Compliance & dokumentstyring"
@@ -192,6 +198,7 @@ export default function Ydelser() {
               }}
             />
             <IconCard
+              themeVariant="secondary"
               initSize="fit"
               iconChild={<GlobeIcon />}
               cardTitle="Projektstyring"
@@ -210,6 +217,7 @@ export default function Ydelser() {
               }}
             />
             <IconCard
+              themeVariant="secondary"
               initSize="fit"
               iconChild={<GlobeIcon />}
               cardTitle="Kvalitetsstyring (QA)"
@@ -225,6 +233,7 @@ export default function Ydelser() {
               }}
             />
             <IconCard
+              themeVariant="secondary"
               initSize="fit"
               iconChild={<GlobeIcon />}
               cardTitle="Kundeportal & selvbetjening"
