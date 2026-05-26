@@ -264,7 +264,7 @@
 */
 
   main {
-    @apply  grid-cols-max auto-rows-min max-w-breakout grid min-h-full gap-y-28 *:col-start-2 *:col-end-auto *:last:mb-28 md:min-h-dvh;
+    @apply  grid-cols-max auto-rows-min max-w-breakout grid min-h-full gap-y-27 md:gap-y-32 *:col-start-2 *:col-end-auto *:last:mb-27 md:*:last:mb-32 md:min-h-dvh;
     
     /* Overriding all non-breakout elements padding-inline with the mobile pad.  
       - (grid-cols-max) has been updated to include the mobile-pad-inline on both ends.
