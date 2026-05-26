@@ -144,7 +144,7 @@ export default function ImageAndText({
               <LinkBtn
                 btnLink={buttonHref}
                 handleBtnAction={buttonOnClick}
-                btnSize="medium"
+                initSize="medium"
                 themeVariant={buttonVariant}
                 // btnClass="gap-2 rounded-full shadow-[0_4px_0_#240700] hover:-translate-y-0.5 hover:bg-[#ffe0c3]"
               >

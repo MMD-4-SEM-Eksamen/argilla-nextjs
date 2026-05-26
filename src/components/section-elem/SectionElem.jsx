@@ -74,18 +74,24 @@ export default function SectionElem({
       heading: "text-dark",
       bodyText: "text-primary",
     },
+    tertiary: {
+      heading: "text-secondary",
+      bodyText: "text-light",
+    },
   };
 
   const theme = themeSwatch[themeVariant] || themeSwatch.primary;
 
   return (
     <section
-      className={`${breakout ? "col-span-full" : ""} ${elemStyle} grid place-items-center gap-20 md:gap-24 max-md:px-mobile-inline max-md:py-7`}
+      className={`${breakout ? "col-span-full" : ""} ${elemStyle} max-md:px-mobile-inline grid place-items-center gap-20 max-md:py-7 md:gap-24`}
     >
       {centeredVariant ? (
-        <div className={`grid w-full gap-16 place-items-center place-content-center`}>
+        <div
+          className={`grid w-full place-content-center place-items-center gap-16`}
+        >
           <div className="grid max-w-[75ch] gap-10 text-center">
-            <h2 className={`${theme.heading} text-4xl md:text-5xl`}>
+            <h2 className={`${theme.heading} font-serif text-4xl md:text-5xl`}>
               {sectionHeading}
             </h2>
             <p className={`${theme.bodyText} text-base md:text-lg`}>
@@ -93,20 +99,20 @@ export default function SectionElem({
             </p>
           </div>
           {btnChild && btnChild.type === "ActionBtn" && (
-              <ActionBtn themeVariant={themeVariant} {...btnChild.props}>
-                {btnChild.label}
-              </ActionBtn>
+            <ActionBtn themeVariant={themeVariant} {...btnChild.props}>
+              {btnChild.label}
+            </ActionBtn>
           )}
           {btnChild && btnChild.type === "LinkBtn" && (
-              <LinkBtn themeVariant={themeVariant} {...btnChild.props}>
-                {btnChild.label}
-              </LinkBtn>
+            <LinkBtn themeVariant={themeVariant} {...btnChild.props}>
+              {btnChild.label}
+            </LinkBtn>
           )}
         </div>
       ) : (
         <div className={`grid w-full gap-16 md:flex md:justify-between`}>
-          <div className="grid max-w-[75ch] gap-12 text-center">
-            <h2 className={`${theme.heading} text-4xl md:text-5xl`}>
+          <div className="grid max-w-[75ch] gap-12 text-left">
+            <h2 className={`${theme.heading} font-serif text-4xl md:text-5xl`}>
               {sectionHeading}
             </h2>
             <p className={`${theme.bodyText} text-base md:text-lg`}>

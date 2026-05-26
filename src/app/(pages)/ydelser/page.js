@@ -98,7 +98,7 @@ export default function Ydelser() {
           sectionHeading="Færdige moduler"
           sectionBodyText="Argilla leveres med en samling færdigbyggede systemmoduler der dækker de mest almindelige forretningsbehov. Brug dem som udgangspunkt og tilpas dem præcis til den måde jeres organisation arbejder på."
           centeredVariant={true}
-          themeVariant="secondary"
+          themeVariant="tertiary"
         >
           <div className="md:px-mobile-inline grid max-w-360 grid-cols-1 gap-20 md:grid-cols-2 md:gap-30 lg:grid-cols-3">
             <IconCard
