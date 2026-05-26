@@ -29,9 +29,9 @@ export default function LinkBtn({
 
     const responsiveSize = {
     toMedium:
-      "md:min-w-[176px] md:h-[44px] md:text-base md:rounded-2xl md:px-4 md:py-2 md:hover:border-b-[3.5px] hover:border-r-[3.5px]",
+      "md:min-w-[176px] md:h-[44px] md:text-base md:rounded-2xl md:px-4 md:py-2 md:hover:border-b-[3.5px] md:hover:border-r-[3.5px]",
     toLarge:
-      "md:min-w-[256px] md:h-[56px] md:text-lg md:rounded-3xl md:px-6 md:py-3 md:hover:border-b-4 hover:border-r-4",
+      "md:min-w-[256px] md:h-[56px] md:text-lg md:rounded-3xl md:px-6 md:py-3 md:hover:border-b-4 md:hover:border-r-4",
   };
 
   const themeSwatch = {
