@@ -35,6 +35,7 @@ export default function Home() {
       />
 
       <LineBlock
+        lineTitle="Sådan arbejder vi"
         items={[
           {
             id: 1,

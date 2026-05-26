@@ -9,7 +9,6 @@ import DUMMY_DATA from "@/api/dummy-data/omos.json";
 import EMPLOYEES_DATA from "@/api/dummy-data/employees.json";
 
 export default function OmOs() {
-
   return (
     <main>
       <ImageWrapper
@@ -36,7 +35,7 @@ export default function OmOs() {
         title={DUMMY_DATA.factsSection.title}
         description={DUMMY_DATA.factsSection.description}
       />
-      <LineBlock items={DUMMY_DATA.lineItems} />
+      <LineBlock lineTitle="Hvorfor vælge os?" items={DUMMY_DATA.lineItems} />
       <SectionElem
         sectionHeading={DUMMY_DATA.employeeCardSection.heading}
         sectionBodyText={DUMMY_DATA.employeeCardSection.bodyText}
@@ -44,8 +43,8 @@ export default function OmOs() {
           type: "LinkBtn",
           label: DUMMY_DATA.employeeCardSection.btnChild.label,
           props: {
-            btnLink: DUMMY_DATA.employeeCardSection.btnChild.btnLink
-          }
+            btnLink: DUMMY_DATA.employeeCardSection.btnChild.btnLink,
+          },
         }}
       >
         <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-x-40 gap-y-20">
