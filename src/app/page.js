@@ -30,7 +30,7 @@ export default function Home() {
           roundingVariant: "medium",
         }}
         buttonLabel="Kom i gang"
-        buttonLink="/"
+        buttonLink="/ydelser"
         buttonConfig={{ initSize: "medium", bpSize: "toLarge" }}
       />
 
@@ -69,7 +69,7 @@ export default function Home() {
           label: "Se alle cases",
           props: {
             initSize: "medium",
-            link: "/",
+            btnLink: "/cases",
             themeVariant: "secondary",
           },
         }}
@@ -85,7 +85,7 @@ export default function Home() {
               label: "Læs mere",
               props: {
                 initSize: "medium",
-                link: "/",
+                btnLink: "/cases/virksomhed-1",
               },
             }}
           />
@@ -98,7 +98,7 @@ export default function Home() {
               label: "Læs mere",
               props: {
                 initSize: "medium",
-                link: "/",
+                btnLink: "/cases/virksomhed-2",
               },
             }}
           />
@@ -111,7 +111,7 @@ export default function Home() {
               label: "Læs mere",
               props: {
                 initSize: "medium",
-                link: "/",
+                btnLink: "/cases/virksomhed-3",
               },
             }}
           />
@@ -139,7 +139,7 @@ export default function Home() {
           label: "Mød teamet",
           props: {
             initSize: "medium",
-            link: "/",
+            btnLink: "/teamet",
             themeVariant: "secondary",
           },
         }}
@@ -177,7 +177,7 @@ export default function Home() {
           label: "Se alle cases",
           props: {
             initSize: "medium",
-            link: "/",
+            btnLink: "/cases",
             themeVariant: "secondary",
           },
         }}
@@ -219,7 +219,7 @@ export default function Home() {
         reverseOrder
         showButton
         buttonLabel="Book en samtale"
-        buttonHref="#"
+        buttonHref="/kontakt"
         buttonVariant="secondary"
       />
     </main>
