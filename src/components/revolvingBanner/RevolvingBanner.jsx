@@ -1,4 +1,3 @@
-"use client";
 /**
  * IconMarquee
  * ───────────────────────────────────────────────────────────────────────────
@@ -36,6 +35,7 @@
  * iconSize     – Icon size in px (default: 28)
  * badgeSize    – Badge circle diameter in Tailwind units (default: "14" = 3.5rem)
  * className    – Extra Tailwind class(es) on the outer wrapper (optional)
+ * themeVariant - "primary" | "secondary"
  *
  * CUSTOMISATION
  * ─────────────
@@ -47,7 +47,6 @@
  * ───────────────────────────────────────────────────────────────────────────
  */
 
-import React, { useRef, useEffect } from "react";
 import {
   AlienIcon,
   AnchorIcon,
@@ -59,7 +58,9 @@ import {
   DogIcon,
   DropHalfIcon,
   FishIcon,
-} from "@phosphor-icons/react";
+} from "@phosphor-icons/react/dist/ssr";
+
+import IconWrapper from "../ui/icon-wrapper/IconWrapper";
 
 // ─── Default icon set ────────────────────────────────────────────────────────
 
@@ -78,13 +79,19 @@ const DEFAULT_ICONS = [
 
 // ─── Single badge ────────────────────────────────────────────────────────────
 
-function IconBadge({ Icon, iconSize, badgeSize }) {
+function IconBadge({ Icon, iconSize, badgeSize, themeVariant }) {
   return (
     <div
-      className="bg-secondary flex shrink-0 items-center justify-center rounded-full"
+      className={`bg-${themeVariant === "primary" ? "secondary" : "primary"} flex shrink-0 items-center justify-center rounded-full`}
       style={{ width: badgeSize, height: badgeSize }}
     >
-      <Icon size={iconSize} weight="regular" color="#803125" />
+      <IconWrapper themeVariant={themeVariant}>
+        <Icon
+          size={iconSize}
+          weight="regular"
+          color={themeVariant === "primary" ? "#803125" : "#ffe5cf"}
+        />
+      </IconWrapper>
     </div>
   );
 }
@@ -98,6 +105,7 @@ export default function IconMarquee({
   iconSize = 30,
   badgeSize = 56,
   className = "",
+  themeVariant = "primary",
 }) {
   // Duplicate the list so the loop is seamless
   const track = [...icons, ...icons];
@@ -106,7 +114,7 @@ export default function IconMarquee({
 
   return (
     <div
-      className={`bg-primary relative w-full overflow-hidden py-4 ${className}`}
+      className={`bg-${themeVariant} relative w-full overflow-hidden py-4 ${className}`}
       aria-label="Scrolling icon banner"
       aria-hidden="true"
     >
@@ -144,6 +152,7 @@ export default function IconMarquee({
             Icon={Icon}
             iconSize={iconSize}
             badgeSize={badgeSize}
+            themeVariant={themeVariant}
           />
         ))}
       </div>
