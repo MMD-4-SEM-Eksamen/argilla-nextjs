@@ -33,7 +33,7 @@ export default function Home() {
         buttonLink="/ydelser"
         buttonConfig={{ initSize: "medium", bpSize: "toLarge" }}
       />
-      
+
       <LineBlock
         lineTitle="Sådan arbejder vi"
         items={[
@@ -164,7 +164,7 @@ export default function Home() {
             variant="secondary"
           />
         </div>
-        <RevolvingBanner />
+        <RevolvingBanner themeVariant="secondary" />
       </div>
 
       <SectionElem
