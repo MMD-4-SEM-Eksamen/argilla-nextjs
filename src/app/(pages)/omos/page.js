@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 import FactsAndText from "@/components/blockElements/FactsAndText";
 import SectionElem from "@/components/section-elem/SectionElem";
 import ImageWrapper from "@/components/ui/image-wrapper/ImageWrapper";
@@ -9,15 +13,42 @@ import DUMMY_DATA from "@/api/dummy-data/omos.json";
 import EMPLOYEES_DATA from "@/api/dummy-data/employees.json";
 
 export default function OmOs() {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+
+    const updateViewportState = () => {
+      setIsDesktop(mediaQuery.matches);
+    };
+
+    updateViewportState();
+    mediaQuery.addEventListener("change", updateViewportState);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateViewportState);
+    };
+  }, []);
+
   return (
     <main>
-      <ImageWrapper
-        imgSrc={DUMMY_DATA.hero.imageSrc}
-        imgAlt={DUMMY_DATA.hero.altTxt}
-        imgWidth={DUMMY_DATA.hero.width}
-        imgHeight={DUMMY_DATA.hero.height}
-        imgStyle="col-span-full"
-      />
+      {isDesktop ? (
+        <ImageWrapper
+          imgSrc={DUMMY_DATA.hero.imageSrc}
+          imgAlt={DUMMY_DATA.hero.altTxt}
+          imgWidth={DUMMY_DATA.hero.width}
+          imgHeight={DUMMY_DATA.hero.height}
+          imgStyle="col-span-full"
+        />
+      ) : (
+        <ImageWrapper
+          imgSrc={DUMMY_DATA.hero.imageSrc}
+          imgAlt={DUMMY_DATA.hero.altTxt}
+          imgWidth={40}
+          imgHeight={30}
+          imgStyle="col-span-full"
+        />
+      )}
       <SectionElem
         centeredVariant={true}
         sectionHeading={DUMMY_DATA.introSection.heading}
