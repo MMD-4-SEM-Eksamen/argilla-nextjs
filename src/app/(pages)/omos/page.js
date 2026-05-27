@@ -44,8 +44,8 @@ export default function OmOs() {
         <ImageWrapper
           imgSrc={DUMMY_DATA.hero.imageSrc}
           imgAlt={DUMMY_DATA.hero.altTxt}
-          imgWidth={40}
-          imgHeight={30}
+          imgWidth={400}
+          imgHeight={300}
           imgStyle="col-span-full"
         />
       )}
